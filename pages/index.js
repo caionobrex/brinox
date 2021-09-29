@@ -3,12 +3,28 @@ import Link from 'next/link'
 import BudgetCard from '../components/budgetCard'
 import { HiOutlineMail, HiLocationMarker } from 'react-icons/hi'
 import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa'
-import { MdMenu, MdCheck } from 'react-icons/md'
+import { MdMenu, MdCheck, MdClose } from 'react-icons/md'
 import { ImWhatsapp } from 'react-icons/im'
 import { AiFillStar } from 'react-icons/ai'
 import { FiThumbsUp } from 'react-icons/fi'
+import { useState } from 'react'
 
 const Container = ({ children }) => <div className="px-6 md:px-32 2xl:px-96">{children}</div>
+
+const MobileNav = ({ close }) => (
+  <div className="fixed top-0 left-0 h-full bg-white md:hidden" style={{ width: '80%' }}>
+    <MdClose className="absolute top-0 right-0 text-2xl text-gray-800" onClick={close} />
+    <nav className="px-4 py-6">
+      <ul className="flex flex-col gap-4 font-medium text-lg text-gray-700">
+        <li className="text-primary text-bold"><Link href="#">Home</Link></li>
+        <li><Link href="#">Serviços</Link></li>
+        <li><Link href="#">Contatos</Link></li>
+        <li><Link href="#">Quem somos</Link></li>
+        <li><Link href="#">Blog</Link></li>
+      </ul>
+    </nav>
+  </div>
+)
 
 const Gallery = () => (
   <div className="grid gap-4 bg-primary md:grid-cols-4">
@@ -51,7 +67,7 @@ const Gallery = () => (
   </div>
 )
 
-const Header = () => (
+const Header = ({ open }) => (
   <header>
     <div className="py-5 bg-primary md:py-2">
       <Container>
@@ -108,7 +124,7 @@ const Header = () => (
               <button className="bg-primary text-white rounded px-4 py-2 ml-1 font-medium">Fazer Orçamento</button>
             </ul>
           </nav>
-          <MdMenu className="text-2xl md:hidden text-white" />
+          <MdMenu className="text-2xl md:hidden text-white" onClick={open} />
         </div>
       </Container>
     </div>
@@ -436,6 +452,18 @@ const Footer = () => (
 )
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const open = () => {
+    setIsOpen(true)
+    document.body.style.overflowY = 'hidden'
+  }
+
+  const close = () => {
+    setIsOpen(false)
+    document.body.style.overflowY = 'auto'
+  }
+  
   return (
     <div>
       <Head>
@@ -445,7 +473,7 @@ export default function Home() {
         <script src='https://llwhatsapp.blob.core.windows.net/whatschat-scripts/whatschat-fae711ca53b34fb3bc4ff7d5135285ee.js'></script>
       </Head>
 
-      <Header />
+      <Header open={open} close={close} />
 
       <HeroSection />
 
@@ -462,6 +490,8 @@ export default function Home() {
       <OurClients />
 
       <Footer />
+
+      {isOpen && <MobileNav close={close} />}
     </div>
   )
 }
