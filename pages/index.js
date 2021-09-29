@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import BudgetCard from '../components/budgetCard'
+import Zoom from 'react-reveal/Zoom'
+import Fade from 'react-reveal/Fade'
+import Bounce from 'react-reveal/Bounce'
 import { HiOutlineMail, HiLocationMarker } from 'react-icons/hi'
 import { FaInstagram, FaFacebook, FaYoutube } from 'react-icons/fa'
 import { MdMenu, MdCheck, MdClose } from 'react-icons/md'
@@ -145,23 +148,27 @@ const HeroSection = () => (
     <Container>
       <div className="flex flex-col gap-x-4 gap-y-8 md:flex-row md:gap-0 md:items-center">
         <div className="col">
-          <h1 className="flex flex-col">
-            <span className="flex flex-col gap-x-4 font-bold text-2xl text-primary tracking-widest md:flex-row md:items-center">
-              <p><span className="text-gray-700">METALÚRGICA</span> BRINOX</p>
-              <ul className="flex gap-1">
-                <li><AiFillStar /></li>
-                <li><AiFillStar /></li>
-                <li><AiFillStar /></li>
-                <li><AiFillStar /></li>
-                <li><AiFillStar /></li>
-              </ul>
-            </span>
-            <span className="font-bold text-6xl text-gray-800 md:text-8xl">Tudo Em <span className="text-primary">Aço</span> Inox</span>
-          </h1>
-          <p className="mt-5 font-medium xl:pr-16">
-            Entregamos para todo territorio nacional. Seja com a nossa frota de caminhões
-            ou de avião.
-          </p>
+          <Zoom top>
+            <h1 className="flex flex-col">
+              <span className="flex flex-col gap-x-4 font-bold text-2xl text-primary tracking-widest md:flex-row md:items-center">
+                <p><span className="text-gray-700">METALÚRGICA</span> BRINOX</p>
+                <ul className="flex gap-1">
+                  <li><AiFillStar /></li>
+                  <li><AiFillStar /></li>
+                  <li><AiFillStar /></li>
+                  <li><AiFillStar /></li>
+                  <li><AiFillStar /></li>
+                </ul>
+              </span>
+              <span className="font-bold text-6xl text-gray-800 md:text-8xl">Tudo Em <span className="text-primary">Aço</span> Inox</span>
+            </h1>
+          </Zoom>
+          <Fade left>
+            <p className="mt-5 font-medium xl:pr-16">
+              Entregamos para todo territorio nacional. Seja com a nossa frota de caminhões
+              ou de avião.
+            </p>
+          </Fade>
 
           <div className="flex flex-col gap-2 mt-6 md:pr-2 md:flex-row">
             <button className="bg-primary w-full rounded px-8 py-2 text-white font-medium transition-all hover:opacity-80 md:w-auto">
@@ -202,15 +209,21 @@ const About = () => (
     <Container>
       <div className="flex flex-col gap-10 md:flex-row md:items-center">           
         <div className="col">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">
-            Quem Somos ?
-          </h2>
-          <h3 className="text-2xl font-medium mb-4">
-            A <span className="text-primary">BRINOX</span> Oferece os Melhores Serviços de Aço Inox do Brasil
-          </h3>
-          <p className="text-justify">
-            Desde 1998, a <span className="text-primary font-medium">BRINOX</span> vem proporcionando soluções inovadoras em inox aos seus clientes, contando com a maior diversidade de produtos, linha completa para hospitais, cozinhas industriais até produtos de acessibilidade ou peças projetadas. Sempre visando o menor preço e a máxima qualidade que você, nosso cliente merece.
-          </p>
+          <Fade left>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">
+              Quem Somos ?
+            </h2>
+          </Fade>
+          <Zoom>
+            <h3 className="text-2xl font-medium mb-4">
+              A <span className="text-primary">BRINOX</span> Oferece os Melhores Serviços de Aço Inox do Brasil
+            </h3>
+          </Zoom>
+          <Zoom top>
+            <p className="text-justify">
+              Desde 1998, a <span className="text-primary font-medium">BRINOX</span> vem proporcionando soluções inovadoras em inox aos seus clientes, contando com a maior diversidade de produtos, linha completa para hospitais, cozinhas industriais até produtos de acessibilidade ou peças projetadas. Sempre visando o menor preço e a máxima qualidade que você, nosso cliente merece.
+            </p>
+          </Zoom>
         </div>
         <div className="col">
           <img src="/images/entrega.jpg" className="rounded" />
@@ -241,13 +254,15 @@ const Features = () => (
   <section className="bg-primary-dark py-16">
     <Container>
       <div className="grid gap-4 md:grid-cols-3">
-        <div className="flex flex-col text-gray-100 items-center p-4 rounded gap-3">
-          <AiFillStar className="text-9xl" />
-          <h3 className="font-medium text-2xl">Tradição</h3>
-          <p className="text-center">
-            A BRINOX atua no mercado de inox há mais de 23 anos. Atendendo clientes por todo Brasil.
-          </p>
-        </div>
+        <Fade top>
+          <div className="flex flex-col text-gray-100 items-center p-4 rounded gap-3">
+            <AiFillStar className="text-9xl" />
+            <h3 className="font-medium text-2xl">Tradição</h3>
+            <p className="text-center">
+              A BRINOX atua no mercado de inox há mais de 23 anos. Atendendo clientes por todo Brasil.
+            </p>
+          </div>
+        </Fade>
         <div className="flex flex-col items-center p-4 text-gray-100 rounded gap-3 transform md:-translate-y-7">
           <FiThumbsUp className="text-9xl" />
           <h3 className="font-medium text-2xl">Confiança</h3>
@@ -256,14 +271,16 @@ const Features = () => (
             no nosso atendimento, qualidade e prazo de entrega.
           </p>
         </div>
-        <div className="flex flex-col items-center p-4 text-gray-100 rounded gap-3">
-          <MdCheck className="text-9xl" />
-          <h3 className="font-medium text-2xl">Qualidade</h3>
-          <p className="text-center mt-2">
-            A qualidade de nossos produtos é inigualável. Pois, usamos da melhor obra prima
-            e temos os melhores profissionais.
-          </p>
-        </div>
+        <Fade top>
+          <div className="flex flex-col items-center p-4 text-gray-100 rounded gap-3">
+            <MdCheck className="text-9xl" />
+            <h3 className="font-medium text-2xl">Qualidade</h3>
+            <p className="text-center mt-2">
+              A qualidade de nossos produtos é inigualável. Pois, usamos da melhor obra prima
+              e temos os melhores profissionais.
+            </p>
+          </div>
+        </Fade>
       </div>
     </Container>
   </section>
@@ -273,9 +290,11 @@ const OurServices = () => (
   <section className="our-services py-24 bg-gray-900 relative overflow-hidden">
     <Container>
       <div>
-        <h2 className="text-center text-4xl font-bold text-gray-50">
-          Alguns de Nossos Serviços
-        </h2>
+        <Fade left>
+          <h2 className="text-center text-4xl font-bold text-gray-50">
+            Alguns de Nossos Serviços
+          </h2>
+        </Fade>
         <div className="grid gap-4 gap-y-10 mt-14 md:grid-cols-4">
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-3.jpg" />
@@ -339,7 +358,9 @@ const OurServices = () => (
 const Contact = () => (
   <div className="py-20 bg-gray-900">
     <Container>
-      <h2 className="text-center text-3xl mb-10 font-bold text-gray-50">Fale Conosco</h2>
+      <Fade top>
+        <h2 className="text-center text-3xl mb-10 font-bold text-gray-50">Fale Conosco</h2>
+      </Fade>
       <div className="grid gap-y-6 gap-x-3 md:grid-cols-3">
         <div className="text-center bg-primary rounded flex flex-col items-center gap-3 text-white p-14 transition-all transform hover:-translate-y-4">
           <ImWhatsapp className="text-6xl" />
@@ -361,9 +382,11 @@ const Contact = () => (
 const OurClients = () => (
   <div className="py-20">
     <Container>
-      <h2 className="text-center text-4xl font-bold mb-6">
-        Nossos Clientes
-      </h2>
+      <Bounce top>
+        <h2 className="text-center text-4xl font-bold mb-6">
+          Nossos Clientes
+        </h2>
+      </Bounce>
       <div className="grid gap-2 md:grid-cols-4">
         <div className="text-center transition-all hover:opacity-80">
           <img src="https://imgr.search.brave.com/WwsRPYMAU1YXDj7BsGPhgjD7dtGoQhxUXk36YKuuDRE/fit/1040/225/ce/1/aHR0cHM6Ly90c2Uy/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5v/NjIyc1NWUjVWZ0Zq/cTk0UU9RNUdnSGFE/WSZwaWQ9QXBp" />
