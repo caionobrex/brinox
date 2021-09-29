@@ -148,10 +148,10 @@ const HeroSection = () => (
           </p>
 
           <div className="flex flex-col gap-2 mt-6 md:pr-2 md:flex-row">
-            <button className="bg-primary w-full rounded px-8 py-2 text-white font-medium md:w-auto">
+            <button className="bg-primary w-full rounded px-8 py-2 text-white font-medium transition-all hover:opacity-80 md:w-auto">
               Serviços
             </button>
-            <button className="bg-primary-dark w-full rounded px-4 py-2 text-white font-medium md:w-auto">
+            <button className="bg-primary-dark w-full rounded px-4 py-2 text-white font-medium transition-all hover:opacity-80 md:w-auto">
               Quem somos ?
             </button>
           </div>

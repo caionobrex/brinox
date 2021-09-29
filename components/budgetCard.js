@@ -83,8 +83,8 @@ export default function BudgetCard({ theme, width }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option disabled>Estado</option>
-                  <option>Estado</option>
+                  <option value="">Estado</option>
+                  <option>Ceará</option>
                 </select>
                 <select
                   className="w-full py-2 rounded bg-gray-100 text-gray-700"
@@ -93,8 +93,8 @@ export default function BudgetCard({ theme, width }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option disabled>Cidade</option>
-                  <option>Cidade</option>
+                  <option value="">Cidade</option>
+                  <option>Fortaleza</option>
                 </select>
                 <select
                   className="w-full py-2 rounded bg-gray-100 text-gray-700"
@@ -103,7 +103,7 @@ export default function BudgetCard({ theme, width }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                 >
-                  <option disabled>Assunto</option>
+                  <option value="">Assunto</option>
                   <option className="budget">Orçamento</option>
                   <option className="doubt">Duvida</option>
                 </select>
