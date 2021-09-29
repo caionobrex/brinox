@@ -254,29 +254,29 @@ const Features = () => (
 )
 
 const OurServices = () => (
-  <section className="our-services py-24 bg-gray-200 relative overflow-hidden">
+  <section className="our-services py-24 bg-gray-900 relative overflow-hidden">
     <Container>
       <div>
-        <h2 className="text-center text-4xl font-bold text-gray-700">
+        <h2 className="text-center text-4xl font-bold text-gray-50">
           Alguns de Nossos Serviços
         </h2>
         <div className="grid gap-4 mt-14 md:grid-cols-4">
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-3.jpg" />
-            <h3 className="mt-7 text-gray-700 font-medium text-lg">Artigos Hospitalares</h3>
+            <h3 className="mt-7 text-gray-100 font-medium text-lg">Artigos Hospitalares</h3>
           </div>
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-12.jpg" />
-            <h3 className="mt-7 text-gray-700 font-medium text-lg">Cozinhas Profissionais</h3>
+            <h3 className="mt-7 text-gray-100 font-medium text-lg">Cozinhas Profissionais</h3>
           </div>
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-4.jpg" />
-            <h3 className="mt-7 text-gray-700 font-medium text-lg">Móveis Projetados</h3>
+            <h3 className="mt-7 text-gray-100 font-medium text-lg">Móveis Projetados</h3>
           </div>
 
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-8.jpg" />
-            <h3 className="mt-7 text-gray-700 font-medium text-lg">Letreiros em Inox</h3>
+            <h3 className="mt-7 text-gray-100 font-medium text-lg">Letreiros em Inox</h3>
           </div>
         </div>
       </div>
@@ -315,13 +315,6 @@ const OurServices = () => (
           width: 180px;
           height: 180px;
         }
-      }
-
-      h2 {
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        background-image: linear-gradient(to right, rgb(17, 24, 39), #e60000);
       }
     `}</style>
   </section>
