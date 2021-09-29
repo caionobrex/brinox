@@ -260,7 +260,7 @@ const OurServices = () => (
         <h2 className="text-center text-4xl font-bold text-gray-50">
           Alguns de Nossos Serviços
         </h2>
-        <div className="grid gap-4 mt-14 md:grid-cols-4">
+        <div className="grid gap-4 gap-y-10 mt-14 md:grid-cols-4">
           <div className="text-center transition-all transform hover:-translate-y-4">
             <img src="/images/gallery-3.jpg" />
             <h3 className="mt-7 text-gray-100 font-medium text-lg">Artigos Hospitalares</h3>
