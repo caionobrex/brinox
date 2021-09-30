@@ -109,7 +109,7 @@ export default function BudgetCard({ theme, width }) {
                 </select>
               </div>
               <textarea
-                placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+                placeholder="O que você deseja ? Seja uma dúvida ou um orçamento, basta nos enviar. Fique a vontade para entrar em contato conosco!!"
                 rows="4"
                 className="rounded p-2 col-span-3 bg-gray-100 outline-none"
                 name="body"
