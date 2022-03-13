@@ -26,7 +26,7 @@ export default function BudgetCard({ theme, width }) {
   }
 
   return (
-    <div className={`rounded ${width || 'w-full'} p-6 shadow-md ${theme === 'dark' ? 'bg-gray-900' : 'bg-primary'}`}>
+    <div className={`rounded ${width || 'w-full'} p-6 shadow-md ${theme === 'dark' ? 'bg-gray-900' : 'bg-primary'} md:w-[30rem] lg:w-[32rem]`}>
       <div className="mb-8 text-center">
         <h3 className="text-white font-medium text-2xl">
           Faça <span className={`${theme === 'dark' ? 'text-primary' : 'text-gray-900'}`}>Já</span> Seu <span className={`${theme === 'dark' ? 'text-primary' : 'text-gray-900'}`}>Orçamento</span>

@@ -12,7 +12,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { FiThumbsUp } from 'react-icons/fi'
 import { useState } from 'react'
 
-const Container = ({ children }) => <div className="px-6 md:px-32 2xl:px-96">{children}</div>
+const Container = ({ children }) => <div className="custom-container">{children}</div>
 
 const MobileNav = ({ close }) => (
   <div className="fixed top-0 left-0 h-full bg-white md:hidden" style={{ width: '80%' }}>
@@ -74,7 +74,7 @@ const Header = ({ open }) => (
   <header>
     <div className="py-5 bg-primary md:py-2">
       <Container>
-        <div className="flex flex-col gap-6 text-white md:flex-row md:justify-between md:items-center">              
+        <div className="flex flex-col gap-6 text-white lg:flex-row lg:justify-between lg:items-center">              
           <ul className="flex gap-4 items-center text-xl">
             <li className="bg-white rounded-full p-2 bg-primary-dark">
               <a href="https://www.instagram.com/br.inoxoficial/" target="_blank"><FaInstagram /></a>
@@ -117,7 +117,7 @@ const Header = ({ open }) => (
       <Container>
         <div className="flex justify-between items-center">
           <Link href="/"><a><img src="/images/logo.png" width="110" /></a></Link>
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <ul className="flex items-center gap-5 font-medium text-lg text-gray-50">
               <li className="text-primary text-bold"><Link href="#">Home</Link></li> <span className="text-gray-500">|</span>
               <li><Link href="#">Serviços</Link></li> <span className="text-gray-500">|</span>
@@ -127,7 +127,7 @@ const Header = ({ open }) => (
               <button className="bg-primary text-white rounded px-4 py-2 ml-1 font-medium">Fazer Orçamento</button>
             </ul>
           </nav>
-          <MdMenu className="text-2xl md:hidden text-white" onClick={open} />
+          <MdMenu className="text-2xl lg:hidden text-white" onClick={open} />
         </div>
       </Container>
     </div>
@@ -146,11 +146,11 @@ const Header = ({ open }) => (
 const HeroSection = () => (
   <section className="hero py-12 bg-gray-200">
     <Container>
-      <div className="flex flex-col gap-x-4 gap-y-8 md:flex-row md:gap-0 md:items-center">
+      <div className="flex flex-col gap-x-4 gap-y-8 lg:flex-row lg:gap-0 lg:items-center lg:gap-x-10">
         <div className="col">
           <Zoom top>
             <h1 className="flex flex-col">
-              <span className="flex flex-col gap-x-4 font-bold text-2xl text-primary tracking-widest md:flex-row md:items-center">
+              <span className="flex flex-col gap-x-4 font-bold text-2xl text-primary tracking-widest lg:flex-row lg:items-center">
                 <p><span className="text-gray-700">METALÚRGICA</span> BRINOX</p>
                 <ul className="flex gap-1">
                   <li><AiFillStar /></li>
@@ -160,7 +160,7 @@ const HeroSection = () => (
                   <li><AiFillStar /></li>
                 </ul>
               </span>
-              <span className="font-bold text-6xl text-gray-800 md:text-8xl">Tudo Em <span className="text-primary">Aço</span> Inox</span>
+              <span className="font-bold text-6xl text-gray-800 lg:text-8xl">Tudo Em <span className="text-primary">Aço</span> Inox</span>
             </h1>
           </Zoom>
           <Fade left>
